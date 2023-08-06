@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Control Panel with Diagram</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+    <script src="ajax.js"></script>
+        <style>
+body{
+    text-align: center;
+}
+controlPanel { margin: 20px auto;
+            width: 640px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);}
+controls {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;}
+button {
+            padding: 10px 20px;
+            background-color: #6a67ce;
+            color: #ffffff;
+            border: 0;
+            border-radius: 5px;
+            font-size: 16px;
+}
+#forward{
+              position: relative;
+              margin-top: 1%;
+              margin-right: 1%;
+              text-align: center;
+              background-color:#5DADE2;
+              border-color: black;
+    }
+    #stop{
+                position: relative;
+                margin-top: 3%;
+                background-color:#DE3163;
+                border-color: black;
+            }
+    #left{
+                position: relative;
+                margin-top: 3%;
+                margin-right: 1%;
+                background-color:#5DADE2;
+                border-color: black;
+            }
+    #right{
+                position: relative;
+                margin-top: 3%;
+                margin-left: 1%;
+                background-color:#5DADE2;
+                border-color: black;
+            }
+    #backward{
+                position: relative;
+                margin-top: 3%;
+                background-color:#5DADE2;
+                border-color: black;
+                
+            }
+.leftside, .rightside{
+    width: 100%;
+}
+.leftside{
+    margin-top: 6%;
+}
+canvas{
+  position: relative;
+            width: 600px;
+            height: 300px;
+            background-color: #99b0d1;
+            border: 1px solid #292525;
+}
+
+        </style>
+</head>
+
+<body>
+    <div class="row no-gutters">
+        <div class="col no-gutters">
+            <div class="leftside">
+                <button onclick="ff(300,290)" id="forward" name="button" value="forward">forward</button><br> <!--(Diagram size/2 , Diagram size/2 - 10) 
+                    to keep the x-axis as it is and, on the other hand, move the y-axis to the north by -10 -->
+                <button onclick="lf(290,300)" id="left" name="button" value="left">left</button>
+                <button id="stop" name="button" value="stop">stop</button>
+                <button onclick="rf(310,300)" id="right" name="button" value="right">right</button><br>
+                <button onclick="bf(300,310)" id="backward" name="button" value="backward">backward</button>
+            </div>
+        </div>
+
+        <div class="col no-gutters">
+          <div class="controlPanel">
+            <div class="controls">
+            <div class="rightside">
+               <br>
+                <canvas id="myCanvas" width="600" height="600"></canvas> <!--Diagram size-->
+            </div>
+        </div>
+    </div>
+  </div> </div>
+    <script src="javascript.js"></script>
+</body>
+
+</html>
